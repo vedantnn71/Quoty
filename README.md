@@ -22,11 +22,10 @@ cd quoty
 3. Run the following command to get quotes when you run your terminal emulator.
    If you're using bash - 
    ```bash
-   echo 'quoty &' >> ~/.bashrc
+   echo 'quoty' >> ~/.bashrc
    ```
    If you're using zsh -
    ```zsh
-   echo 'quoty &' >> ~/.zshrc
+   echo 'quoty' >> ~/.zshrc
    ```
 That's it! Pull requests are welcome, open a request if you encounter any problem.
-   
