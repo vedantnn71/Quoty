@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+git clone https://gitlab.com/vedantnn7/quoty.git
+cd quoty
+mkdir -p ~/.local/bin
+cp ./quoty ~/.local/bin/
+echo 'quoty &' >> ~/.zshrc
+echo 'quoty &' >> ~/.bashrc
