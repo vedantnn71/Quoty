@@ -14,19 +14,24 @@ class RandomQuote:
         self.saveResponse()
 
     def saveResponse(self):
-        file_name = "data"
-        if not os.path.isfile(file_name):
+        file_dir = os.path.expanduser("~/.local/share/quoty/")
+        file_path = file_dir + "data"
+
+        if not os.path.isdir(file_dir):
+            os.mkdir(file_dir)
+
+        if not os.path.isfile(file_path):
             get_data = request.get(url = self.apiUrl)
             get_data = get_data.json()
 
             self.data = get_data
             final_data = (get_data)
 
-            with open(file_name, "ab") as data_file:
+            with open(file_path, "ab") as data_file:
                 dump(final_data, data_file)
         
         else:
-            with (open(file_name, "rb")) as data_file:
+            with (open(file_path, "rb")) as data_file:
                 while True:
                     try:
                         self.data = (load(data_file))
